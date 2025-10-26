@@ -1,0 +1,15 @@
+
+.empty-box-container {
+  width: 836px;
+  height: 689px;
+  max-width: 100%; 
+  box-sizing: border-box; 
+  
+ 
+  background: rgba(97, 97, 97, 0.82); 
+  border: 1px solid #96BEE7;
+  border-radius: 27px;
+  
+  
+  opacity: 1;
+}

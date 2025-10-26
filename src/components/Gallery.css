@@ -1,0 +1,200 @@
+/* === Main Gallery Card === */
+.gallery-card-container {
+  font-family: 'Poppins', sans-serif;
+  background: #363c43;
+  width: 720px;
+  max-width: 100%;
+  height: 330px;
+  border-radius: 19px;
+  padding: 24px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  box-sizing: border-box;
+}
+
+/* === Hidden File Input === */
+.hidden-file-input {
+  display: none;
+}
+
+/* === Top Left Icons (Gallery Specific) === */
+.gallery-top-icons {
+  position: absolute;
+  top: 18px;
+  left: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 105px;
+  z-index: 10;
+}
+.gallery-icon-circle {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: linear-gradient(327.89deg, #4a4e54 -1.73%);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: bold;
+}
+.gallery-grid-icon {
+  display: grid;
+  grid-template-columns: repeat(2, 9.31px);
+  grid-template-rows: repeat(3, 9.31px);
+  gap: 1.38px;
+  width: 20px;
+  height: 30.68px;
+}
+.gallery-grid-cube {
+  width: 9.31px;
+  height: 9.31px;
+  border-radius: 1.16px;
+  background: #4a4e54;
+}
+
+/* === Gallery Header === */
+.gallery-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  padding-left: 50px;
+  position: relative;
+}
+.gallery-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 149px;
+  height: 62px;
+  border-radius: 20px;
+  background: #171717;
+  box-shadow: inset 0px 4px 10px 2px rgba(0, 0, 0, 0.25);
+  color: #ffffff;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+}
+.gallery-controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  z-index: 2;
+}
+
+/* === MODIFIED: "+ Add Image" Button === */
+.add-image-btn {
+  background: #3c4249;
+  color: #ffffff;
+  border: none;
+  /* Corrected border-radius for pill shape */
+  border-radius: 25px; 
+  padding: 12px 18px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.25);
+}
+.add-image-btn:hover {
+  background: #4a4e54;
+  transform: translateY(-1px);
+}
+
+/* === Arrow Buttons === */
+.arrow-btn {
+  width: 45px;
+  height: 45px;
+  border: none;
+  border-radius: 50%; /* Circular */
+  background: linear-gradient(139.14deg, #303439 12.4%, #161718 94.96%);
+  box-shadow: 4px 5px 30px 5px #101213, -5px -3px 30px -10px #96bee7;
+  color: #6f787c;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.arrow-btn:hover {
+  color: #ffffff;
+  transform: translateY(-1px);
+  box-shadow: 6px 7px 35px 5px #101213, 
+              -5px -3px 30px -8px #96bee7;
+}
+.arrow-btn:disabled {
+  cursor: not-allowed; 
+  transform: translateY(0); 
+  box-shadow: 4px 5px 30px 5px #101213, -5px -3px 30px -10px #96bee7;
+  color: #6f787c; 
+  opacity: 1; 
+}
+
+/* === Image Gallery Wrapper === */
+.image-gallery-wrapper {
+  margin-left: 50px;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* Image List Flex Container */
+.image-list {
+  display: flex;
+  gap: 15px;
+  width: max-content;
+  transition: transform 0.5s ease-in-out; 
+}
+
+/* === Image Container with Hover Effects === */
+.image-container {
+  width: 190px;
+  height: 179px;
+  border-radius: 24px;
+  overflow: hidden;
+  flex-shrink: 0;
+  position: relative;
+  cursor: pointer;
+  
+  filter: grayscale(100%);
+  transition: all 0.3s ease;
+}
+.image-container:hover {
+  filter: grayscale(0%);
+  transform: scale(1.05);
+  z-index: 10;
+}
+
+.image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+  display: block;
+  position: relative;
+  z-index: 1;
+}
+
+/* Overlay for the dark tint */
+.image-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.2); 
+  z-index: 2; /* Sits ON TOP of the image */
+  border-radius: 24px;
+  transition: all 0.3s ease;
+}
+/* On hover, make the overlay disappear */
+.image-container:hover::before {
+  opacity: 0;
+}

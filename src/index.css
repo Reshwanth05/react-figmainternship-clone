@@ -1,0 +1,20 @@
+/* Add this to your main CSS file */
+/* Add this at the top */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&family=Plus+Jakarta+Sans:wght@400&display=swap');
+
+/* Your existing Tailwindcss or other base imports go below */
+body {
+  /* This ensures fonts are available globally */
+  font-family: 'Poppins', sans-serif;
+}
+body {
+  margin: 0;
+  padding: 20px; /* Add padding around the container */
+  /* This matches the gradient's end color for a seamless look */
+  background: #191B1F; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
